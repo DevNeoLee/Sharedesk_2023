@@ -18,22 +18,30 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="col-md-3 select">
+                    <div class="col-md-4 select">
                         <div class="form-group">
                             <label>Space Type</label>
                             <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Office", "Office" ]], id: :home_type, prompt: 'Select...', class: "form-control" %>
                         </div>
                     </div>
-                    <div class="col-md-3 select">
+                    <div class="col-md-4 select">
                         <div class="form-group">
                             <label>Desk Type</label>
                             <%= f.select :room_type, [["Single Desk", "Single Desk"], ["Private Room Office", "Private Room Office"], ["Sharing Table", "Sharing Table" ]], id: :room_type, prompt: 'Select...', class: "form-control" %>
                         </div>
                     </div>
-                    <div class="col-md-3 select">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label>Capacity</label>
-                            <%= f.select :accomodate, [["1", 1], ["2", 2], ["3", 3 ], ["4+", 4]], id: :accomodate, prompt: 'Select...', class: "form-control" %>
+                            <%= f.text_field :capacity, id: :accomodate, prompt: 'Select...', class: "form-control" %>
+                        </div>
+                    </div>                 
+                </div>
+                  <div class="form-row">
+                    <div class="col-md-3 select">
+                        <div class="form-group">
+                            <label>Noise Level</label>
+                            <%= f.select :noise_level, [["Silent Mode", "Silent Mode"], ["Quiet", "Quiet"], ["Casual", "Casual" ]], id: :noise_level, prompt: 'Select...', class: "form-control" %>
                         </div>
                     </div>
                     <div class="col-md-3 select">
@@ -42,8 +50,20 @@
                             <%= f.select :bath_room, [["1", 1], ["2", 2], ["3+", 3]], prompt: 'Select...', class: "form-control" %>
                         </div>
                     </div>
+                    <div class="col-md-3 select">
+                        <div class="form-group">
+                            <label>Manager on Premise</label>
+                            <%= f.select :manager_on, [["Fulltime", "Fulltime"], ["Parttime", "Parttime"], ["No Manager Stay", "No Manager Stay"]], prompt: 'Select...', class: "form-control" %>
+                        </div>
+                    </div>
+                     <div class="col-md-3 select">
+                        <div class="form-group">
+                            <label>Security</label>
+                            <%= f.select :security_level, [["high", "high"], ["good", "good"], ["maximum", "maximum"]], prompt: 'Select...', class: "form-control" %>
+                        </div>
+                    </div>  
+                  
                 </div>
-
                 <div class="card bg-dark">
                     <div class="card-body">
                         <div class="form-row">
@@ -121,11 +141,10 @@
                 </div>
                 <div class="row">
                     <div class="col-md-4">
-                        <div class="form-group">
-                            <Label class="mt-4">Price(per day)</Label> 
-                            <div class="input-group">
-                                <div class="input-group-addon m-2"> $ </div>
-                                <%= f.text_field :price, placeholder: "Enter dollar amount in number", class: "form-control" %>
+                        <div class="form-group d-flex mt-3">
+                        <div class="mt-2"><p>Price($)</p></div>
+                            <div class="input-group pl-2">
+                                <%= f.text_field :price, placeholder: "Enter dollar amount in number", class: "form-control pl-3" %>
                             </div>
                         </div>
                     </div>
@@ -134,7 +153,7 @@
                     <div class="col-md-6 p-2 m-2">
                         <div class="form-group">
                                 <Label>Upload Space Photos</Label>
-                            <div class="btn btn-primary p-4">
+                            <div class="card bg-primary p-4 d-flex">
                                 <i class="far fa-images fa-2x"></i>
                                 <%= f.file_field :images, multiple: true %>
                             </div>

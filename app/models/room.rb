@@ -5,8 +5,6 @@ class Room < ApplicationRecord
   geocoded_by :address
   has_many :reviews
 
-
-
   def average_rating 
     reviews.count == 0 ? 0 : reviews.average(:star).round(2)
   end
