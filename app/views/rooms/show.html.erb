@@ -1,5 +1,5 @@
 
-<%= link_to new_room_path, class: "h3" do %>Add new rooom<i class="fas fa-cat"></i><% end %>
+<%= link_to new_room_path, class: "h3" do %>Add new space<i class="fas fa-cat"></i><% end %>
 
 <div class="card card-body">
     <div class="card-body">
@@ -43,17 +43,20 @@
 
                         <div class="row text-center">
                             <div class="col-sm-3">
-                                <%= @room.home_type%>
+                                <%= @room.space_type%>
                             </div>
                         </div>
                         <div class="row text-center">
                             <div class="col-sm-3">
-                                <%= @room.accomodate %> <%= @room.accomodate > 1 ? "Guests" : "Guest" %>
+                                <% if @room.capacity %>
+                                    <%= @room.capacity %> <%= @room.capacity > 1 ? "Guests" : "Guest" %>
+                                <% end %>
+                                
                             </div>
                         </div>
                         <div class="row text-center">
                             <div class="col-sm-3">
-                                <%= @room.bed_room %> <%= @room.bed_room > 1 ? "Bedrooms": "Bedroom" %>
+                                <%= @room.desk_type %> 
                             </div>
                         </div>
                         <div class="row text-center">
@@ -71,7 +74,7 @@
         <%# About %>
         <div class="row">
             <div class="col-md-12">
-                <h2>About This Listing</h2>
+                <h2>About This Space</h2>
                 <p><%= @room.summary %></p>
             </div>
         </div>
@@ -88,7 +91,7 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="amenities">
-                            <li class="<%= 'text-line-through' if !@room.is_cable %>">CableTV</li>
+                            <li class="<%= 'text-line-through' if !@room.is_conference %>">Conference Call Space</li>
                             <li class="<%= 'text-line-through' if !@room.is_kitchen %>">Kitchen</li>
                             <li class="<%= 'text-line-through' if !@room.is_wifi %>">Wifi/Internet</li>
                         </ul>

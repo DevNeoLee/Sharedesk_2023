@@ -21,19 +21,19 @@
                     <div class="col-md-4 select">
                         <div class="form-group">
                             <label>Space Type</label>
-                            <%= f.select :home_type, [["Apartment", "Apartment"], ["House", "House"], ["Office", "Office" ]], id: :home_type, prompt: 'Select...', class: "form-control" %>
+                            <%= f.select :space_type, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Office", "Office" ]],  selected: @room.space_type || nil), include_blank: true, class: "form-control" %>
                         </div>
                     </div>
                     <div class="col-md-4 select">
                         <div class="form-group">
                             <label>Desk Type</label>
-                            <%= f.select :room_type, [["Single Desk", "Single Desk"], ["Private Room Office", "Private Room Office"], ["Sharing Table", "Sharing Table" ]], id: :room_type, prompt: 'Select...', class: "form-control" %>
+                            <%= f.select :desk_type, [["Single Desk", "Single Desk"], ["Private Room Office", "Private Room Office"], ["Sharing Table", "Sharing Table" ]], id: :desk_type, prompt: 'Select...', class: "form-control" %>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Capacity</label>
-                            <%= f.text_field :capacity, id: :accomodate, prompt: 'Select...', class: "form-control" %>
+                            <%= f.text_field :capacity, id: :capacity, prompt: 'How many desks to share?', class: "form-control" %>
                         </div>
                     </div>                 
                 </div>
