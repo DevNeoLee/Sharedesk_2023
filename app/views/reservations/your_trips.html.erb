@@ -6,7 +6,7 @@
                             <div class="card-header">
                                  <%= trip.start_date.strftime('%v')%>                
                             </div>
-                              <%= link_to room_path(trip.room) do %>
+                            <%= link_to room_path(trip.room) do %>
                                 <%= image_tag trip.room.images[0], class: "img-fluid" %>
                             <% end %>
                             <div class="card-body">

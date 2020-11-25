@@ -14,21 +14,23 @@
         <div class="col-md-9">
             <div class="row">
                 <% @rooms.each do |room| %>
-                    <div class="col-md-6">
-                        <div class="card mb-2">
-                            <div class="card-header">
-                                <h4><%= room.listing_name %></h4>                     
-                            </div>
-                            <%= image_tag room.images[0] if room.images.length > 0 %>
-                            <div class="card-body">
-                                <div class="card-title">
-                                    <%= room.address %>
+                    <%= link_to room_path(room.id) do %>
+                        <div class="col-md-4">
+                            <div class="card mb-2">
+                                <div class="card-header">
+                                    <h4><%= room.listing_name %></h4>                     
                                 </div>
-                                <%= link_to "Update", edit_room_path(room), class: "btn btn-primary mb-2" %>
-                                <%= button_to "Delete", room_path(room), method: "delete", data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+                                <%= image_tag room.medium_image(room.images[0]), class: "img-fluid" %>
+                                <div class="card-body">
+                                    <div class="card-title">
+                                        <%= room.address %>
+                                    </div>
+                                    <%= link_to "Update", edit_room_path(room), class: "btn btn-primary mb-2" %>
+                                    <%= button_to "Delete", room_path(room), method: "delete", data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+                                </div>
                             </div>
-                        </div>
-                    </div>
+                        </div>                    
+                    <% end %>                    
                 <% end %>
             </div>
         </div>

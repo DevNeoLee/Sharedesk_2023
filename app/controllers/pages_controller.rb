@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @pagy, @rooms = pagy(Room.all, items: 2)
+    @pagy, @rooms = pagy(Room.all, items: 6)
     @search = @rooms.ransack(params[:q])
     @reviews = Review.all
 
