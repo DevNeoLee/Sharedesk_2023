@@ -156,19 +156,28 @@
                 </div>
             <% end %>
         </div>
-        <hr>    
-         <%= render @search_result %>
+        <hr>
+        <%# <div class="col-md-12"> %>
+            <div class="row">
+                   <%= render @search_result %>
+            </div>
+        <%# </div> %>
     </div>
 </div>
 
-<div data-controller="infinite-scroll" data-action="scroll@window->infinite-scroll#scroll">
-    <div data-target="infinite-scroll.entries">
-        <%= render @browse_result %>
+<%# <div class="row"> %>
+    <div data-controller="infinite-scroll" data-action="scroll@window->infinite-scroll#scroll">
+        <div data-target="infinite-scroll.entries">
+            <div class="row">
+                <%= render @browse_result %>            
+            </div>
+        </div>
+        <div data-target="infinite-scroll.pagination">
+            <%== pagy_bootstrap_nav(@pagy).html_safe %>
+        </div>
     </div>
-    <div data-target="infinite-scroll.pagination">
-        <%== pagy_bootstrap_nav(@pagy).html_safe %>
-    </div>
-</div>
+<%# </div> %>
+
     
 <script>
     $(function() {

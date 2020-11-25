@@ -1,4 +1,6 @@
+
 <div class="col-md-4">
+<%=link_to room_path(room.id) do %>
     <div class="card mb-2 shadow d-flex ">
         <div class="card-header">
             <%= room.address %>
@@ -15,4 +17,6 @@
             </div>
         </div>
     </div>
+<% end %>
 </div>
+
