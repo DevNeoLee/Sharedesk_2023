@@ -16,7 +16,9 @@
 
   <p>Want to find what are available for your work productivity and efficiency?</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="#" role="button">Find Locally!</a>
+  <%= link_to search_path(q: {"address_cont": "vancouver"}) do %>
+    <button class="btn btn-primary btn-lg">Find Local</button>
+  <% end %>
   </p>
 </div>
 
@@ -97,19 +99,23 @@
     <br>
     <div class="row">
         <div class="col-md-4 col-sm-12">
-            div.<div class="card shadow">
-                <div class="card-header">       
-                        <h2><string>NYC</string></h2>
-                </div>
-                <div class="card-body">
-                    <div class="card-text">
-                        <%= image_tag "orangePolygonLarge"%>
+        
+            <%= link_to search_path(q:{"address_or_summary_or_listing_name_cont": "nyc"} ) do %>
+                <div class="card shadow">
+                    <div class="card-header">       
+                            <h2><string>NYC</string></h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <%= image_tag "orangePolygonLarge"%>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            <% end %>    
+        </div>    
     <div class="col-md-4 col-sm-12">
-            div.<div class="card shadow">
+        <%= link_to search_path(q:{"address_or_summary_or_listing_name_cont": "kolkata"}) do %>
+            <div class="card shadow">
                 <div class="card-header">                    
                     <h2><strong>Kolkata</strong></h2>                    
                 </div>
@@ -119,9 +125,11 @@
                     </div>
                 </div>
             </div>
+        <% end %>
         </div>
     <div class="col-md-4 col-sm-12">
-            div.<div class="card shadow">
+        <%= link_to search_path(q:{"address_or_summary_or_listing_name_cont": "bangkok"}) do %>
+            <div class="card shadow">
                 <div class="card-header">                    
                     <h2><strong>Tokyo</strong></h2>                    
                 </div>
@@ -131,6 +139,7 @@
                     </div>
                 </div>
             </div>
+        <% end %>
         </div>
     </div>
 </div>
