@@ -8,7 +8,7 @@ class RoomsController < ApplicationController
 
   def show
     @images = @room.images
-
+    # for 'reviews' model only showing the detailed reviews on individual room page
     @booked = Reservation.where("room_id = ? AND user_id = ?", @room.id, current_user.id).present? if current_user
     @reviews = @room.reviews
     @hasReview = @reviews.find_by(user_id: current_user.id) if current_user

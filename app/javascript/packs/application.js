@@ -15,6 +15,9 @@ import "controllers"
 
 import "./page_home_datepicker"
 
+require('./jquery.raty')
+
+
 // google map api with Stimulus.js
 window.dispatchMapsEvent = function (...args) {
   const event = document.createEvent("Events")
@@ -28,10 +31,6 @@ import 'scss/site'
 
 //JS
 import('js/site')
-
-//Images
-const images = require.context('../images', true)
-const imagePath = (name) => images(name, true)
 
 toastr.options = {
   "closeButton": false,
