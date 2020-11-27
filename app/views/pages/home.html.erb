@@ -1,3 +1,4 @@
+
 <%# front two main images with local access %>
 <div class="jumbotron shadow">
   <h1 class="display-4">Need quick work station this morning?</h1>
@@ -73,24 +74,8 @@
     <% end %>
 </div>
 
-<table>
-  <tr>
-    <th> <%= sort_link @search, :noise_level, "Noise Level"%></th>
-    <th> <%= sort_link @search, :price, "Price"%></th>
-    <th> <%= sort_link @search, :is_drinks,  "Free Drinks"%></th>
-    <th> <%= sort_link @search, :is_parking,  "Parking Available"%></th>
-  </tr>
-  <% @browse_result.each do |room| %>
-  <tr>
-    <td><%= link_to room.listing_name, room_path(room.id) %></td>
-    <td>$<%= room.price %></td>
-    <td><%= room.desk_type %></td>
-    <td><%= room.space_type %></td>
-  </tr>
-  <% end %>
-</table>
 
-<%# three main cities ard the world %>
+<%# one click search for three main cities ard the world %>
 <div class="jumbotron shadow">
     <div class="text-center">
         <h2>Anywhere You Go</h2>
@@ -98,16 +83,16 @@
     </div>
     <br>
     <div class="row">
-        <div class="col-md-4 col-sm-12">
-        
+        <div class="col-md-4 col-sm-12">        
             <%= link_to search_path(q:{"address_or_summary_or_listing_name_cont": "nyc"} ) do %>
                 <div class="card shadow">
                     <div class="card-header">       
-                            <h2><string>NYC</string></h2>
+                        <h2><string>NYC</string></h2>
                     </div>
+                    <%= image_tag "nyc_home_page_pexels-ono-kosuki.jpg", class: "img-fluid image-medium image_response" %>
                     <div class="card-body">
                         <div class="card-text">
-                            <%= image_tag "orangePolygonLarge"%>
+                            Find Home on Our Cozy Cowork Places Just Around the Corner
                         </div>
                     </div>
                 </div>
@@ -119,9 +104,10 @@
                 <div class="card-header">                    
                     <h2><strong>Kolkata</strong></h2>                    
                 </div>
+                <%= image_tag "kolkata_home_page_pexels-neosiam-.jpg", class: "img-fluid image-medium image_response"%>
                 <div class="card-body">
                     <div class="card-text">
-                        <%= image_tag "orangePolygonLarge"%>
+                        Professional Cowork Space in Busy Diverse Dinamic City
                     </div>
                 </div>
             </div>
@@ -131,11 +117,12 @@
         <%= link_to search_path(q:{"address_or_summary_or_listing_name_cont": "bangkok"}) do %>
             <div class="card shadow">
                 <div class="card-header">                    
-                    <h2><strong>Tokyo</strong></h2>                    
+                    <h2><strong>Bangkok</strong></h2>                    
                 </div>
+                <%= image_tag "bangkok_home_page_pexels-nick-wehrli.jpg" , class: "img-fluid image-medium"%>                
                 <div class="card-body">
                     <div class="card-text">
-                        <%= image_tag "orangePolygonLarge"%>
+                        Remote Work Desk Spot in This Beautiful Backpackers Heaven 
                     </div>
                 </div>
             </div>
@@ -149,31 +136,11 @@
     <div class="text-center">
         <h2>Customer Reviews</h2>
     </div>
-    <div class="col-md-8">
-        <% @reviews.each do |review| %>
-            <div class="card shadow mb-3 ">
-                <div class="row">
-                    <div class="col-md-3">
-                        <%= @rooms.find(review.room_id).listing_name %>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="card-title">
-                                    <%=review.comment %>
-                                </div>
-                                <div class="card-text">
-                                    <h5><%= review.star %></h5>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <% end %>
+    <div class="col-md-12"> 
+        <%= render "reviews/list" %>
     </div>
 </div>
-<%= render "reviews/list" %>
+
 <%# footer %>
 <% if !user_signed_in? %>
   <footer>

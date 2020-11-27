@@ -1,19 +1,17 @@
 <%= form_with(model: [@room, @room.reservations.new], local: true) do |form| %>
     <div class="row">
         <div class="col-md-12 price_tag">
-            <span>$<%= @room.price %> </span>
-            <span class="pull-right">Per night</span>
+            <span class="pull-right">Day Pass : </span>
+            <span>$ <%= @room.price %> </span>
         </div>
     </div>
-    
-    
     <div class="row">
-        <div class="col-md-6">
-            <label>Check In</label>
+        <div class="col-md-3 mb-3">
+            <label> Check In</label>
             <%= form.text_field :start_date, readyonly: 'true', placeholder: "Start Date", class: 'form-control' %>
         </div>
-         <div class="col-md-6">
-            <label>Check Out</label>
+         <div class="col-md-3">
+            <label> Check Out</label>
             <%= form.text_field :end_date, readyonly: 'true', placeholder: "End Date", class: 'form-control', disabled: 'true' %>
         </div>
     </div>
@@ -28,7 +26,7 @@
         <table class="reservation-table">
             <tbody>
                 <tr>
-                    <td>Night(s)</td>
+                    <td>Day(s)</td>
                     <td><span id="reservation_days"></span></td>
                 </tr>
                 <tr>
@@ -40,7 +38,7 @@
         <br>
     </div>
     <div class="actions">
-        <%= form.submit "Book Now", id: "btn_book", class: "btn btn-primary wide", disabled: 'true'%>
+        <%= form.submit "Book Now", id: "btn_book", class: "btn btn-primary mb-5", disabled: 'true'%>
     </div>
 <% end %>
 

@@ -2,22 +2,22 @@
     <div class="text-center"><h4>There is no Review yet.</h4></div>
 <% else %>
     <% @reviews.order("id desc").each do |review| %>
-    <hr>
-
-    <div class="row">
-        <div class="col-md-2 circle">
-            <%= image_tag review.user.default_avatar, class: "avatar-medium" %>
-        </div>
-        <div class="col-md-10">
-            <div>
-                <strong><%= review.user.name %><div id="stars_<%= review.id %>"></div></strong>
-                <span class="pull-right">
-                    <%= link_to "Remove My Review", [@room, review], method: "delete", data: {confirm: "Are you sure?"} if current_user && current_user == review.user %>
-                </span>
+    <div class="card shadow p-3 mb-3">
+        <div class="row">
+            <div class="col-md-2 text-center">
+                <%= image_tag review.user.default_avatar, class: "avatar-medium" %>
             </div>
+            <div class="col-md-10">
+                <div>
+                    <strong><%= review.user.name %><div id="stars_<%= review.id %>"></div></strong>
+                    <span class="pull-right">
+                        <%= link_to "Remove My Review", [review.room, review], method: "delete", data: {confirm: "Are you sure?"} if current_user && current_user == review.user %>
+                    </span>
+                </div>
 
-            <div><%= review.created_at.strftime("%v") %></div>
-            <div><%= review.comment %></div>
+                <div><%= review.created_at.strftime("%v") %></div>
+                <div><%= review.comment %></div>
+            </div>
         </div>
     </div>
     <script>
@@ -35,7 +35,7 @@
 
 <script>
     $('#star').raty({
-        size: 36,
+        size: 15,
         path: '/assets/',
         scoreName: 'review[star]',
         score: 1,

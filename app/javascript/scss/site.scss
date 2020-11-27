@@ -47,12 +47,8 @@ a {
 }
 
 a:hover {
-  color: rgba(255, 115, 0, 0.986);
   text-decoration: none;
-}
-
-img:hover {
-    transform: scale(1);
+  color: #667;
 }
 
 .main {
@@ -84,6 +80,11 @@ img:hover {
   border-radius: 50%;
 }
 
+.image-medium {
+  max-width: 500px;
+  max-height: 300px;
+}
+
 .image_carousel {
   width: 900px;
 }
@@ -94,35 +95,35 @@ img:hover {
 }
 
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    }
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
 @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
 }
 
 /* sign_in page */
 .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
 
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
   }
+}
 
 /* login signup */
 .form-signin {
@@ -224,11 +225,11 @@ img:hover {
     -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
   }
-
+  
   .form-label-group label {
     position: static;
   }
-
+  
   .form-label-group input::-ms-input-placeholder {
     color: #777;
   }
@@ -336,7 +337,7 @@ input[type="checkbox"]:checked:before {
   font-size: 20px;
   padding: 10px;
   margin-bottom: 10px;
-
+  
 }
 
 .conversation {
@@ -370,11 +371,11 @@ input[type="checkbox"]:checked:before {
 }
 
 .discovery-card {
-
+  
 }
 
 .va-container {
-
+  
 }
 
 
@@ -389,4 +390,10 @@ input[type="checkbox"]:checked:before {
   position: relative;
   right: 5%;
   top: 5%;
+}
+
+a .card:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+  text-decoration: none;
 }
