@@ -29,6 +29,9 @@ window.dispatchMapsEvent = function (...args) {
 //css
 import 'scss/site'
 
+//JS
+import('js/site')
+
 toastr.options = {
   "closeButton": false,
   "debug": false,
