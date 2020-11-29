@@ -39,7 +39,11 @@
                             <div class="card-header">
                                 <h4><%= room.listing_name %></h4>                     
                             </div>
-                            <%= image_tag room.medium_image(room.images[0]), class: "img-fluid" %>
+                              <% if room.images.attached?%>
+                                    <%= image_tag room.medium_image(room.images[0]), class: "img-fluid" %>                                
+                                <% else %>      
+                                    <%= image_tag 'default_room.jpg', class: "img-fluid" %>    
+                                <% end %>   
                             <div class="card-body">                        
                                 <div class="card-text">
                                     <%= room.address %>                                    
