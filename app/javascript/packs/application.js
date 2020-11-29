@@ -5,10 +5,10 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require('popper.js')
-require('bootstrap')
 global.toastr = require("toastr")
 require("jquery-ui")
-
+// require('bootstrap')
+import 'bootstrap'
 import "@fortawesome/fontawesome-free/js/all";
 
 import "controllers"

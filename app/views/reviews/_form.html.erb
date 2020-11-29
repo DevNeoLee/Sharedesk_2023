@@ -1,6 +1,9 @@
 <%= form_with model: [@room, @room.reviews.new], local: true do |f|%>
 
-    <div id="stars"></div>
+    <label class="pt-4">Rating: </label> 
+    <div id="stars" class="mb-4"></div>
+
+    <label for="review">Review:</label>
     <%= f.text_field :comment %>
     <%= f.hidden_field :room_id, value: @room.id %>
 
@@ -11,11 +14,11 @@
 
 <script>
     $('#stars').raty({
-        size: 36,
-        path: '/assets/',
         scoreName: 'review[star]',
         score: 1,
-       
-
+        number: 5,
+        starOff:  '<%= image_path('star-off.png') %>',
+        starOn : '<%= image_path('star-on.png') %>',
+    
     });
 </script>
