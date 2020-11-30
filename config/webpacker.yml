@@ -15,11 +15,6 @@ default: &default
 
   # Reload manifest.json on all requests so we reload latest compiled packs
   cache_manifest: true
-<<<<<<< HEAD
-
-
-=======
->>>>>>> parent of 95b4504... debug config production assets setting and debug raty gem production asset path setting
 
   # Extract and emit a css file
   extract_css: false
