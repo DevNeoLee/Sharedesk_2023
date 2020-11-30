@@ -23,12 +23,24 @@
     <script>
     $(function(){
         $('#stars_<%= review.id %>').raty({
+            path: '/assets',
             readOnly: true,
-            starOff:  '<%= image_path('star-off.png') %>',
-            starOn : '<%= image_path('star-on.png') %>',
             score: <%= review.star %>
         })
+
     });
     </script>
     <% end %>   
 <% end %>
+
+<script>
+    $('#star').raty({
+        size: 15,
+        path: '/assets/',
+        scoreName: 'review[star]',
+        score: 1,
+        starOff:  '<%= asset_path('star-off.png') %>',
+        starOn : '<%= asset_path('star-on.png') %>',
+
+    });
+</script>
