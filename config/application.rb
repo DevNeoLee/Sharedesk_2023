@@ -23,7 +23,7 @@ module Sharedesk
 
     config.load_defaults 6.0
 
-
     config.generators.system_tests = nil
+
   end
 end

@@ -35,20 +35,16 @@
         </div>
     </div>
     <div class="col-md-9">
-        <div class="row">
-            <% @rooms.each do |room| %>
-                <% room.reservations.each do |reservation| %>
+        <% @rooms.each do |room| %>
+            <% room.reservations.each do |reservation| %>
+                <div class="row">
                     <div class="col-md-3">
                         <%= link_to room_path(room.id) do %>
                             <div class="card mb-3 ">
                                 <div class="card-header">
                                     <%= reservation.start_date.strftime('%v')%>                        
                                 </div>
-                                <% if room.images.attached?%>
-                                    <%= image_tag room.medium_image(room.images[0]), class: "img-fluid" %>                                
-                                <% else %>      
-                                    <%= image_tag 'default_room.jpg', class: "img-fluid" %>    
-                                <% end %>   
+                                <%= image_tag room.medium_image(room.images[0]), class: "img-fluid" %>
                                 <div class="card-body">                               
                                     <div class="card-title">
                                         <%=room.listing_name %>
@@ -61,8 +57,8 @@
                             </div>                
                         <% end %>            
                     </div>
-                <% end %>
+                </div>
             <% end %>
-        </div>
+        <% end %>
     </div>
 </div>

@@ -83,9 +83,7 @@
                     </div>            
                     <div class="col-md-3 mb-1 p-3 pb-1">
                         <%= @room.bath_room %> <br>
-                        <% if @room.bath_room %>
-                            <%= @room.bath_room > 1 ? "Bathrooms" : "Bathroom" %>
-                        <% end %>
+                        <%= @room.bath_room > 1 ? "Bathrooms" : "Bathroom" %>
                     </div>
                 </div>         
             </div>
@@ -103,7 +101,7 @@
                 <div class="row">
                     <div class="col-md-4 text-center">
                         <ul class="amenities">
-                            <li class="<%= 'text-line-through' if !@room.is_conference %> p-4">Conference Call Space <i class="fas fa-headset"></i></li>
+                            <li class="<%= 'text-line-through' if !@room.is_conference %> p-4">Conference Call Space</li>
                             <li class="<%= 'text-line-through' if !@room.is_kitchen %> p-4">Kitchen</li>
                             <li class="<%= 'text-line-through' if !@room.is_wifi %> p-4">Wifi/Internet</li>
                         </ul>
@@ -146,25 +144,21 @@
 <div class="jumbotron">
     <div class="h3">Other Spaces Near By: </div> 
     <div class="row">
-        <% if @room.nearbys(15) == nil || @room.nearbys(15).length == 0 %>
-            <span class="ml-4"><p>There is no other space near by</p></span>    
-        <% else %>
-            <% @room.nearbys(15).each do |room| %>
-                <div class="col-md-4 mb-3">
-                    <%= link_to room_path(room.id) do %>
-                        <div class="card shadow m-2">
-                            <% if room.images.attached? %>
-                                <%= image_tag room.medium_image(room.images[0]) %>                    
-                            <% end %>                    
-                            <div class="card-body">
-                                <%= room.listing_name%><br>
-                                (<%= room.distance.round(2) %> miles away)
-                            </div>
-                        </div>                
-                    <% end %>                
-                </div>
-            <% end %>        
-        <% end %>            
+        <% @room.nearbys(15).each do |room| %>
+            <div class="col-md-4 mb-3">
+                <%= link_to room_path(room.id) do %>
+                    <div class="card shadow m-2">
+                        <% if room.images.attached? %>
+                            <%= image_tag room.medium_image(room.images[0]) %>                    
+                        <% end %>                    
+                        <div class="card-body">
+                            <%= room.listing_name%><br>
+                            (<%= room.distance.round(2) %> miles away)
+                        </div>
+                    </div>                
+                <% end %>                
+            </div>
+        <% end %>
     </div>
     </div>
 </div>
