@@ -20,22 +20,9 @@ Rails.application.configure do
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
-<<<<<<< HEAD
+
   config.public_file_server.enabled = true
 
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-=======
-  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
-
->>>>>>> parent of ebb36af... debug when compiling// fix message_controller miss-spell, delete js/site.js, config application.rb production.rb webpacker.yml
-  # Compress CSS using a preprocessor.
-  # config.assets.css_compressor = :sass
-
-  # Do not fallback to assets pipeline if a precompiled asset is missed.
-<<<<<<< HEAD
-
-=======
->>>>>>> parent of ebb36af... debug when compiling// fix message_controller miss-spell, delete js/site.js, config application.rb production.rb webpacker.yml
   config.assets.compile = false
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
