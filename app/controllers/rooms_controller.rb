@@ -20,11 +20,12 @@ class RoomsController < ApplicationController
 
   def create
     @room = current_user.rooms.build(room_params)
-    
-    if @room.save 
-      redirect_to edit_room_path(@room) , notice: "Saved..."
-    else
-      render new_room_path , notice: "hmmmmmm...well well"
+    if @room.validate_image?
+      if @room.save 
+        redirect_to edit_room_path(@room) , notice: "Saved..."
+      else
+        redirect_to new_room_path , notice: "At leat one image of the room required!"
+      end
     end
   end
 

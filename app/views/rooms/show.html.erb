@@ -83,7 +83,9 @@
                     </div>            
                     <div class="col-md-3 mb-1 p-3 pb-1">
                         <%= @room.bath_room %> <br>
-                        <%= @room.bath_room > 1 ? "Bathrooms" : "Bathroom" %>
+                        <% if @room.bath_room != nil %>
+                            <%= @room.bath_room > 1 ? "Bathrooms" : "Bathroom" %>
+                        <% end %>
                     </div>
                 </div>         
             </div>

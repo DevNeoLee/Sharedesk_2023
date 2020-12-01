@@ -5,6 +5,19 @@ class Room < ApplicationRecord
   geocoded_by :address
   has_many :reviews
 
+  validates :images, presence: true
+
+  def validate_image?
+    if images.nil?
+      error.add("Could NOT create! Cannot be nil""At least one image of the room required!")
+      false 
+    else
+      true
+    end
+  end
+
+  # validates_associated :images, presence: true
+
   def average_rating 
     reviews.count == 0 ? 0 : reviews.average(:star).round(2)
   end
