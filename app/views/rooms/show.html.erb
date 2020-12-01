@@ -146,6 +146,9 @@
 <div class="jumbotron">
     <div class="h3">Other Spaces Near By: </div> 
     <div class="row">
+    <% if @room.nearbys(15) == nil || @room.nearbys(15).length == 0 %>
+        <p class="ml-4">There is no space near by </p>
+    <% else %>
         <% @room.nearbys(15).each do |room| %>
             <div class="col-md-4 mb-3">
                 <%= link_to room_path(room.id) do %>
@@ -161,6 +164,7 @@
                 <% end %>                
             </div>
         <% end %>
+    <% end %>    
     </div>
     </div>
 </div>
