@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @pagy, @rooms = pagy(Room.all, items: 6)
     @search = @rooms.ransack(params[:q])
     @reviews = Review.all
-    request.location.city == nil ?  @location_received = "london" : @location_received ="russia"
+    request.location.city == nil ?  @location_received = "NYC" : @location_received = request.location.city
 
     respond_to do |format|
       format.html

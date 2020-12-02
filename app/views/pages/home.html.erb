@@ -16,7 +16,7 @@
   </div>
   <p class="lead">
   <div> 쫌 나오지.<%= @location_received %></div>
-  <%= link_to search_path(q: {"address_cont": "vancouver" }) do %>
+  <%= link_to search_path(q: {"address_cont": @location_received }) do %>
     <button class="btn btn-primary btn-lg m-3">Find Local</button>
   <% end %>
   </p>
