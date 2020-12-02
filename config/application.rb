@@ -12,7 +12,7 @@ module Sharedesk
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
 
-    # uncomment below before pushing to heroku or git
+    # setting env variable for development mode only
     config.before_configuration do
       env_file = File.join(Rails.root, 'config', 'local_env.yml')
       YAML.load(File.open(env_file)).each do |key, value|
