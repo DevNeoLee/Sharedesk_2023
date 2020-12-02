@@ -9,7 +9,6 @@ class Room < ApplicationRecord
 
   def validate_image?
     if images.nil?
-      error.add("Could NOT create! Cannot be nil""At least one image of the room required!")
       false 
     else
       true

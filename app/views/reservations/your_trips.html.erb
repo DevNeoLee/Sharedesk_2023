@@ -7,14 +7,12 @@
                             <div class="card-header">
                                  <%= trip.start_date.strftime('%v')%>                
                             </div>
-                            <%= link_to room_path(trip.room) do %>
+                            <% if trip.room.images.attached? %>
                                 <%= image_tag trip.room.medium_image(trip.room.images[0]), class: "img-fluid" %>
                             <% end %>
                             <div class="card-body">
-                                <div class="card-title">
-                                    <%= link_to user_path(trip.room.user) do %>
-                                <%= image_tag trip.room.user.default_avatar, class: "img-circle avatar-large"%>
-                            <% end %>
+                                <div class="card-title">                            
+                                    <%= image_tag trip.room.user.default_avatar, class: "img-circle avatar-large"%>
                                 </div>
                               <h4>$<%= trip.total %></h4>
                             </div>
