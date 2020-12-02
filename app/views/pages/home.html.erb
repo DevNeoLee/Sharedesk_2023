@@ -1,8 +1,8 @@
 
 <%# front two main images with local access %>
 <div class="jumbotron shadow">
-  <h1 class="display-4">Need quick work station this morning?</h1>
-  <p class="lead">Find your work desk instantly.</p>
+  <h1 class="display-4">Need quick work space this morning?</h1>
+  <p class="lead">Find your office instantly.</p>
   <hr class="my-4">
   <div class="col-md-12">
     <div class="row">
@@ -14,11 +14,10 @@
         </div>
     </div>
   </div>
-
-  <p>Want to find what are available for your work productivity and efficiency?</p>
   <p class="lead">
-  <%= link_to search_path(q: {"address_cont": "vancouver"}) do %>
-    <button class="btn btn-primary btn-lg">Find Local</button>
+  <div> 쫌 나오지.<%= @location_received %></div>
+  <%= link_to search_path(q: {"address_cont": "vancouver" }) do %>
+    <button class="btn btn-primary btn-lg m-3">Find Local</button>
   <% end %>
   </p>
 </div>
