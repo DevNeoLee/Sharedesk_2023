@@ -8,7 +8,7 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag '//ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/le-frog/jquery-ui.min.css' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ ENV[:MAPS_API_KEY]}&libraries=places&callback=dispatchMapsEvent",
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ ENV['MAPS_API_KEY']}&libraries=places&callback=dispatchMapsEvent",
                             async: true,
                             defer: true,
                             "data-turbolinks-eval": false %>
