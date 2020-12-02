@@ -92,7 +92,7 @@
         </div>
         <%# google map %>
         <div class="card ml-5 mr-5 mt-4 mb-4 shadow">
-            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x400&center=#{@room.latitude},#{@room.longitude}&key=#{Rails.application.credentials.dig(:google, :MAPS_API_KEY)}", alt: "Map" %>        
+            <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=600x400&center=#{@room.latitude},#{@room.longitude}&key=#{ ENV['MAPS_API_KEY']}", alt: "Map" %>        
         </div>
         <%# Amenities %>
         <div class="card row m-3">
