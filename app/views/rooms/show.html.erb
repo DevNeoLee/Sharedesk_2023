@@ -171,9 +171,10 @@
 <script>
 $(function(){
     $('#average_rating').raty({
-        path: '/assets',
         readOnly: true,
-        score: <%= @room.average_rating %>
+        score: <%= @room.average_rating %>,
+        starOff:  '<%= image_path('star-off.png') %>',
+        starOn : '<%= image_path('star-on.png') %>',
     })
 
 });
