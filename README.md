@@ -27,7 +27,7 @@
 
 - Google Map API / Geocode
 
-- Devise/Raty/Ransack/Active_Storage/Pagy/JQuery UI/Datepicker
+- Devise/ Raty/ Ransack/ Active_Storage/ Pagy/ JQuery UI/ Datepicker/ Toastr
 
 - SASS
 
@@ -65,6 +65,8 @@ User can sign up their homes space for rental business. User can search their lo
 ### Local Searching based on Customer Browser Location
 
 ### Convinient Login using Omniauth(Google/Facebook)
+
+### Notification with Toastr
 
 ---
 ## Future Features to Come
