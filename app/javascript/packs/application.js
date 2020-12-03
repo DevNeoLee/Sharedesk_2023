@@ -14,7 +14,7 @@ import "@fortawesome/fontawesome-free/js/all";
 
 import "controllers"
 
-import "./page_home_datepicker"
+// import "./page_home_datepicker"
 
 require('./jquery.raty')
 
