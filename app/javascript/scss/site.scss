@@ -51,10 +51,6 @@ a:hover {
   color: #667;
 }
 
-.border_radius {
-  border-radius: 5px 0px 0px 5px;
-}
-
 .main {
   min-height: 30rem;
   width: 100 vw;
@@ -308,6 +304,16 @@ input[type="checkbox"]:checked:before {
   display: block;
 }
 
+
+.card_header {
+  font-size: 1.2rem;
+}
+
+.card_body {
+  // background-color: rgba(114, 54, 1, 0.747);
+  color: darkblue;
+  font-size: 1.1rem;
+}
 .card-header.preview {
   padding: 0;
 }
@@ -373,15 +379,6 @@ input[type="checkbox"]:checked:before {
 #article {
   width: 560px;
 }
-
-.discovery-card {
-  
-}
-
-.va-container {
-  
-}
-
 
 /* google map */
 .map {

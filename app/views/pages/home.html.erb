@@ -1,7 +1,7 @@
 
 <%# front two main images with local access %>
 <div class="jumbotron shadow">
-  <h1 class="display-4">Need quick work space this morning?</h1>
+  <h1 class="display-4">Need quick work space in <%= @location_received %> ?</h1>
   <p class="lead">Find your office instantly.</p>
   <hr class="my-4">
   <div class="col-md-12">
@@ -15,62 +15,10 @@
     </div>
   </div>
   <p class="lead">
-  <div> 쫌 나오지.<%= @location_received %></div>
   <%= link_to search_path(q: {"address_cont": @location_received }) do %>
-    <button class="btn btn-primary btn-lg m-3">Find Local</button>
+    <button class="btn btn-primary btn-lg mt-5 ml-4 ">Find Local in Your Area</button>
   <% end %>
   </p>
-</div>
-
-<div class="jumbotron shadow col-md-12">
-    <div class="text-center mb-5 h3">
-        <h3>Have your desk at any city!</h3>
-    </div>
-    <div class="row">    
-        <% @rooms.each do |room|%>
-            <div class="col-md-4">
-                <%= link_to room_path(room.id) do %>
-                    <div class="card mb-2 shadow m-2">
-                        <div class="card-header">
-                            <%= room.listing_name %>
-                        </div>
-                        <% if room.images.attached? %>
-                            <%= image_tag room.medium_image(room.images[0]), class: "img-fluid"%>
-                        <% end %>
-                        <div class="card-body">
-                            <div class="card-text">
-                                <%= room.listing_name %>
-                            </div>
-                            <div class="card-text">
-                                <%= room.address %>
-                            </div>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-        <% end %> 
-    </div>
-  
-</div>
-
-<%# mid-search form %>
-<div class="container-fluid mb-3 border p-4 shadow">
-    <%= search_form_for @search, url: search_path, method: :get do |f| %>
-        <div class="row">
-            <div class="col-md-6">
-                <%= f.search_field :address_cont, placeholder: "where are you going?", class: "form-control"%>
-            </div>
-            <div class="col-md-2">
-                <%= f.submit %>
-            </div>
-            <div class="col-md-2">
-                <%= text_field_tag :start_date, placeholder: "start date", class:"form-control", id: "start_date"%>
-            </div>
-            <div class="col-md-2">
-                <%= text_field_tag :end_date, placeholder: "end date", class:"form-control", id: "end_date"%>
-            </div>
-        </div>
-    <% end %>
 </div>
 
 
@@ -130,6 +78,53 @@
     </div>
 </div>
 
+<%# mid-search form %>
+<div class="container-fluid mb-4 border p-4 shadow sticky-top bg-light">
+    <%= search_form_for @search, url: search_path, method: :get do |f| %>
+        <div class="row">
+            <div class="col-md-6">
+                <%= f.search_field :address_cont, placeholder: "where are you going?", class: "form-control input-lg"%>
+            </div>
+            <div class="col-md-2">
+                <%= f.submit "Check Availability", class: "btn btn-primary"%>
+            </div>
+            <div class="col-md-2">
+                <%= text_field_tag :start_date, "start date", class:"form-control", id: "start_date"%>
+            </div>
+            <div class="col-md-2">
+                <%= text_field_tag :end_date, "end date", class:"form-control", id: "end_date"%>
+            </div>
+        </div>
+    <% end %>
+</div>
+
+<div class="jumbotron shadow col-md-12">
+    <div class="text-center mb-5 h3">
+        <h3>Top Space Pick by Reviews </h3>
+    </div>
+    <div class="row">    
+        <% @rooms.each do |room|%>
+            <div class="col-md-4">
+                <%= link_to room_path(room.id) do %>
+                    <div class="card mb-2 shadow m-2">
+                        <div class="card-header card_header text-center">
+                            <%= room.listing_name %>
+                        </div>
+                        <% if room.images.attached? %>
+                            <%= image_tag room.medium_image(room.images[0]), class: "img-fluid"%>
+                        <% end %>
+                        <div class="card-body card_body">
+                            <div class="card-text">
+                                <%= room.address %>
+                            </div>                     
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        <% end %> 
+    </div>
+</div>
+
 <%# customer reviews %>
 <div class="jumbotron shadow">
     <div class="text-center">
@@ -151,7 +146,7 @@
               <li>4</li>
 
             </ul>
-   
+   © Justin K Lee. All rights reserved. Logo Design from:  Icon by: Icons8
 
     </footer>
 <% end %>

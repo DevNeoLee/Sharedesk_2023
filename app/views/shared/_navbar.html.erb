@@ -36,16 +36,14 @@
         
     <% end %>
     </ul>
-    <div class= "col-md-8 mt-2 mt-2">
+    <div class= "col-md-8 mt-2">
       <%= search_form_for @browse, url: search_path, method: :get do |f|%>
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-7 p-0">
-                  <%=f.search_field :address_cont, class: "form-control input-lg m-0 border_radius", placeholder: "Where are you going to? Try Vancouver, Barcelona, Tokyo..." %>
+                <div class="col-md-7">
+                  <%=f.search_field :address_cont, class: "form-control input-lg", placeholder: "Where are you going to? Try Vancouver, Barcelona, Tokyo..." %>
                 </div>
-
-                <div class="col-md-1 bg-primary">
-                  <%= f.submit "Find Space", class: "btn btn-primary m-0 pl-0"%>
+                  <%= f.submit "Find Space", class: "btn btn-primary"%>
                 </div>
             </div>
           </div>      
