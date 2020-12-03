@@ -1,24 +1,78 @@
-# README
+  
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Share Desk App
 
-Things you may want to cover:
+### live site: https://fathomless-sands-44020.herokuapp.com/
 
-* Ruby version
+<img src="app/assets/images/share_desk.gif" alt="application_screenshot" width="500" />
 
-* System dependencies
+---
+## Technology
 
-* Configuration
+- Ruby on Rails 6.0
 
-* Database creation
+- Javascript
 
-* Database initialization
+- JQuery
 
-* How to run the test suite
+- PostgreSQL
 
-* Services (job queues, cache servers, search engines, etc.)
+- AMAZON AWS S3 
 
-* Deployment instructions
+- Bootstrap
 
-* ...
+- Turbolink/Stimulus.js
+
+- Omniauth(Facebook/Google)
+
+- Google Map API / Geocode
+
+- Devise/Raty/Ransack/Active_Storage/Pagy/JQuery UI/Datepicker
+
+- SASS
+
+- Webpack
+
+- HTML5
+
+---
+## Motivation
+
+This application aims at the web product which serve local community of renting your home for work space and share with community around the world in any city. It started with the fact that we have a lack of space for work and study in every community because COVID pandemic 2020.
+
+Inspired by WeWork and Air B&B products.
+
+User can sign up their homes space for rental business. User can search their local availability of home based work spots around the corner near by.
+
+---
+
+## Features
+
+### User Account/ Profile Update with an Avatar
+
+### Upload Photos to AWS S3
+
+### Hosting your home / apartment for workspace rental
+
+### Locating the address on Google Map
+
+### Advance Searching in Detail
+
+### Rating Reviews with Star System
+
+### Make Reservation with Datepicker
+
+### Local Searching based on Customer Browser Location
+
+### Convinient Login using Omniauth(Google/Facebook)
+
+---
+## Future Features to Come
+
+- Emailing notification
+- API location using Jbuilder for React/Redux
+- Hourly reservation
+- Payment system 
+---
+## License ##
+MIT © Justin K Lee
