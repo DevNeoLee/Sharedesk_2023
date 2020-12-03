@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   get 'pages/home', to: 'pages#home'
 
-  resources :users, only: [:show] #프로파일 유저 각각의
+  resources :users, only: [:show] 
 
   resources :rooms 
   resources :rooms do 

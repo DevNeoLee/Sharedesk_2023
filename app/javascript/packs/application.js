@@ -5,8 +5,8 @@ require("@rails/activestorage").start()
 require("channels")
 require('jquery')
 require('popper.js')
-// require('bootstrap')
-import "bootstrap"
+require('bootstrap')
+// import "bootstrap"
 global.toastr = require("toastr")
 require("jquery-ui")
 
@@ -43,7 +43,7 @@ toastr.options = {
   "onclick": null,
   "showDuration": "10000",
   "hideDuration": "1000",
-  "timeOut": "1000",
+  "timeOut": "3000",
   "extendedTimeOut": "1000",
   "showEasing": "swing",
   "hideEasing": "linear",
