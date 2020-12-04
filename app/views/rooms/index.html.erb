@@ -1,20 +1,20 @@
 
 <div class="h2 text-center m-4">Your Space Listings</div>
-    <div class="row">
-        <div class="col-md-3">
-            <div class="card">
-                <%=image_tag "default_profile.jpg", class: "img-fluid"%>
-                <div class="card-body">
-                    <div class="card-title">
-                        <button class="btn btn-lg btn-danger" href="new_room_path">add your new location</button><h2><%= link_to 'Add new space', new_room_path %></h2>
-                    </div>
+<div class="row min_height_mid">
+    <div class="col-md-3">
+        <div class="card">
+            <%=image_tag "default_profile.jpg", class: "img-fluid"%>
+            <div class="card-body">
+                <div class="card-title">
+                    <button class="btn btn-lg btn-danger" href="new_room_path">add your new location</button><h2><%= link_to 'Add new space', new_room_path %></h2>
                 </div>
             </div>
         </div>
-        <div class="col-md-9">
-            <div class="row">
-                <% @rooms.each do |room| %>
-                        <div class="col-md-4">
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <% @rooms.each do |room| %>
+                <div class="col-md-4">
                     <%= link_to room_path(room.id) do %>
                             <div class="card mb-2">
                                 <div class="card-header">
@@ -32,11 +32,11 @@
                                 </div>
                             </div>
                     <% end %>                    
-                        </div>                    
-                <% end %>
-            </div>
+                </div>                    
+            <% end %>
         </div>
     </div>
 </div>
+
                     
                  

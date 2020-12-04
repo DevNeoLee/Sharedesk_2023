@@ -29,5 +29,5 @@ Rails.application.routes.draw do
   get '/your_trips' => 'reservations#your_trips'
   get '/yourlisting_reservations' => 'reservations#yourlisting_reservations'
   get '/search' => 'pages#search'
-  
+  get '/attribution' => 'pages#attribution'
 end
