@@ -28,6 +28,13 @@
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
           </div>
+            <% form_tag user_session_path(resource), remote: true do %>
+              <%= hidden_field_tag :email, 'peter@email.com' %>
+              <%= hidden_field_tag :password, '111111' %>
+              <%= hidden_field_tag :password_digest, '111111' %>
+              <%= hidden_field_tag :password_field, '111111' %>
+              <%= submit_tag "send" %> 
+            <% end %>
           <% end %>
           <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block p-2" %>
         </div>
@@ -39,13 +46,13 @@
 
       <div class="m-2">
       <hr>
-    
-        <%= link_to do %><button type="button" class="btn btn-lg btn-primary btn-block">Demo</button><% end %><br>
+        
+
+        <%= link_to session_path(resource_name, {email: 'peter@email.com', password_digest: '111111', password: '111111'}) , method: 'post' do %><button type="button" class="btn btn-lg btn-primary btn-block">Demo</button><% end %><br>
       </div>
 
       <hr>
       <div class="pt-3 mb-3 text-muted text-center"><a href="https://devneolee.github.io/JustinKLee/" target="_blank">© Justin K Lee <%= image_tag "blueplane_icon.svg", width: "25px", class: "blueplane"%> </a> All Rights Reserved</div>
-    </div>
     </div>
   </div>
 </div>
