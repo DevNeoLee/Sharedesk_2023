@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     def set_global_search_variable
         @browse = Room.all.ransack(params[:q])
         @pagy, @browse_result = pagy(@browse.result(distinct: true), items: 3)
+        request.location.city == nil ?  @location_received = "NYC" : @location_received = request.location.city
     end
 
     protected 
