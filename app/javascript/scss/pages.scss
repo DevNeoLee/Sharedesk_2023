@@ -64,3 +64,23 @@ figure {
 .ui-widget {
   margin: 27px 30px 0px 0px;
 }
+
+.min_height_mid {
+  min-height: 30rem;
+}
+
+.table100 {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+th, td {
+  border: 1px solid #333;
+  text-align: left;
+  padding: 10px;
+  text-align: center;
+}
