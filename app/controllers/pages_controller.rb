@@ -4,7 +4,6 @@ class PagesController < ApplicationController
     @search = @rooms.ransack(params[:q])
     @reviews = Review.all
     # @best_ranking = @rooms.sort_by{|k, v| v}
-    request.location.city == nil ?  @location_received = "NYC" : @location_received = request.location.city
 
     respond_to do |format|
       format.html
@@ -16,6 +15,9 @@ class PagesController < ApplicationController
     end
   end
 
+  def attribution
+  end
+  
   def search 
     # if params[:search].present? && params[:search].strip != ""
     #   session[:loc_search] = params[:search]
