@@ -22,7 +22,7 @@ class Room < ApplicationRecord
   end
 
   def small_image(image)
-    image.variant(resize_to_fill: [200, 200]) 
+    image.variant(resize_to_fill: [80, 80]) 
   end
 
   def medium_image(image)

@@ -27,10 +27,10 @@
         <div class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown"  tabindex="-1" aria-disabled="true"> | <%=current_user.name %> | <%=current_user.email %></a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-              <%= link_to "Your Listing", rooms_path, class: "dropdown-item"%>
-              <%= link_to "Yourlisting Reservations", yourlisting_reservations_path, class: "dropdown-item"%>
+              <%= link_to "Hosting List", rooms_path, class: "dropdown-item"%>
+              <%= link_to "Customer Reservations", yourlisting_reservations_path, class: "dropdown-item"%>
               <div class="dropdown-divider"></div>
-              <%= link_to "Your Trips", your_trips_path, class: "dropdown-item"%>
+              <%= link_to "Your Cart", your_trips_path, class: "dropdown-item"%>
             </div>
         </div>
         

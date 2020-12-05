@@ -1,12 +1,12 @@
 
-<div class="h2 text-center m-4">Your Space Listings</div>
+<div class="h1 m-4 pt-5 pb-5"> Hosting Space List</div>
 <div class="row min_height_mid">
     <div class="col-md-3">
         <div class="card">
-            <%=image_tag "default_profile.jpg", class: "img-fluid"%>
+            <%=image_tag "main_image1.jpg", class: "img-fluid"%>
             <div class="card-body">
                 <div class="card-title">
-                    <button class="btn btn-lg btn-danger" href="new_room_path">add your new location</button><h2><%= link_to 'Add new space', new_room_path %></h2>
+                    <%= link_to new_room_path do %><button class="btn btn-lg btn-primary" href="new_room_path">Host New Location</button><% end %>
                 </div>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <% @rooms.each do |room| %>
                 <div class="col-md-4">
                     <%= link_to room_path(room.id) do %>
-                            <div class="card mb-2">
+                            <div class="card mb-5">
                                 <div class="card-header">
                                     <h4><%= room.listing_name %></h4>                     
                                 </div>
@@ -27,8 +27,10 @@
                                     <div class="card-title">
                                         <%= room.address %>
                                     </div>
-                                    <%= link_to "Update", edit_room_path(room), class: "btn btn-primary mb-2" %>
-                                    <%= button_to "Delete", room_path(room), method: "delete", data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+                                    <div class="d-flex text-center">
+                                        <%= link_to "Update", edit_room_path(room), class: "btn btn-primary ml-4 mb-2 mr-3" %>
+                                        <%= button_to "Delete", room_path(room), method: "delete", data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>                                    
+                                    </div>                         
                                 </div>
                             </div>
                     <% end %>                    

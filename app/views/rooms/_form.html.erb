@@ -21,7 +21,7 @@
                     <div class="col-md-4 select">
                         <div class="form-group">
                             <label>Space Type</label>
-                            <%= f.select :space_type, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Office", "Office" ]],  selected: @room.space_type || nil), include_blank: true, class: "form-control" %>
+                            <%= f.select :space_type, options_for_select([["Apartment", "Apartment"], ["House", "House"], ["Office", "Office" ]],  selected: @room.space_type || nil), include_blank: true, prompt: 'Select...', class: "form-control" %>
                         </div>
                     </div>
                     <div class="col-md-4 select">
@@ -33,7 +33,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label>Capacity</label>
-                            <%= f.text_field :capacity, id: :capacity, prompt: 'How many desks to share?', class: "form-control" %>
+                            <%= f.number_field :capacity, id: :capacity, placeholder: 'How many people can attend?', class: "form-control" %>
                         </div>
                     </div>                 
                 </div>
@@ -87,50 +87,50 @@
                         <div class="col-md-12">
                             <div class="form-row ">
                                 <div class="col-md-3 mb-3 d-flex">
-                                    <i class="fas fa-wifi"></i>
+                                    <i class="fas fa-wifi fa-lg"></i>
                                     <div class="form-group">
                                         <%= f.check_box :is_wifi, class: "align-middle" %>
                                         wifi
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3 d-flex">
-                                    <i class="fas fa-sink"></i>
+                                    <i class="fas fa-sink fa-lg"></i>
                                     <div class="form-group">
                                         <%= f.check_box :is_kitchen %> Kitchen
                                     </div>         
                                 </div>
                                 <div class="col-md-3 mb-3 d-flex">
-                                <i class="fas fa-headset"></i>
+                                <i class="fas fa-phone-square-alt fa-lg"></i>
                                     <div class="form-group">
                                         <%= f.check_box :is_conference %> Conference Call Space
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3 d-flex">
-                                    <i class="fas fa-print"></i>
+                                    <i class="fas fa-print fa-lg"></i>
                                     <div class="form-group">
                                         <%= f.check_box :is_printing %> Printing
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3 d-flex">
-                                    <i class="fas fa-wine-glass-alt"></i>
+                                    <i class="fas fa-wine-glass-alt fa-lg"></i>
                                     <div class="form-group">
                                         <%= f.check_box :is_drinks %> Free Drinks
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3 d-flex">
-                                    <i class="fas fa-fire"></i>
+                                    <i class="fas fa-fire fa-lg"></i>
                                     <div class="form-group">
                                         <%= f.check_box :is_heating %> Heating
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3 d-flex">
-                                    <i class="fas fa-fan"></i>
+                                    <i class="fas fa-fan fa-lg"></i>
                                     <div class="form-group">
                                         <%= f.check_box :is_air %> Air-Conditioning
                                     </div>
                                 </div>
                                 <div class="col-md-3 mb-3 d-flex">
-                                    <i class="fas fa-parking"></i>
+                                    <i class="fas fa-parking fa-lg"></i>
                                     <div class="form-group">
                                         <%= f.check_box :is_parking %> Parking
                                     </div>
@@ -144,7 +144,7 @@
                         <div class="form-group d-flex mt-3">
                         <div class="mt-2"><p>Price($)</p></div>
                             <div class="input-group pl-2">
-                                <%= f.text_field :price, placeholder: "Enter dollar amount in number", class: "form-control pl-3" %>
+                                <%= f.number_field :price, placeholder: "Enter dollar amount", class: "form-control pl-3" %>
                             </div>
                         </div>
                     </div>
@@ -152,10 +152,11 @@
                 <div class="row">
                     <div class="col-md-6 p-2 m-2">
                         <div class="form-group">
-                                <Label>Upload Space Photos</Label>
-                            <div class="card bg-primary p-4 d-flex">
-                                <i class="far fa-images fa-2x"></i>
-                                <%= f.file_field :images, multiple: true %>
+                                <Label>Upload Photos of Your Space</Label>
+                            <div class="card bg-light p-4 d-flex">
+                                <div class="text-center"><i class="far fa-images fa-2x text-center"></i></div> 
+                                <p class="text-center p-3">* At least one photo required *</p>
+                                <div class="text-center"><%= f.file_field :images, multiple: true, class: "p-2"%></div>
                             </div>
                         </div>
                     </div>
@@ -164,7 +165,7 @@
                 <div class="card">
                     <div class="col-md-6 p-2 m-2">
                         <div class="form-group">
-                            <label for="">Check if you want this space to be availabe for public to make a reservation right away</label>
+                            <label for="">Check only if you want this space is absolutely READY to be availabe for public to make a reservation right away</label>
                             <%= f.check_box :active %> Active
                         </div>
                     </div>
@@ -173,7 +174,7 @@
             </div>
 
             <div class="actions m-3">
-                <%= f.submit "List Your Space", class: "btn btn-primary btn-lg p-4"%>
+                <%= f.submit "Host Your Space", class: "btn btn-primary btn-lg p-4"%>
             </div>
         <% end %>
         </div>

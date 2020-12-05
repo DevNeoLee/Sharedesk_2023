@@ -1,46 +1,49 @@
-<%= form_with(model: [@room, @room.reservations.new], local: true) do |form| %>
-    <div class="row">
-        <div class="col-md-12 price_tag">
-            <span class="pull-right">Day Pass : </span>
-            <span>$ <%= @room.price %> </span>
-        </div>
+<div class="card shadow sticky-top mb-3">
+    <div class="card-header">
+        <h4> Reserve Your Work Spot</h4>
     </div>
-    <div class="row">
-        <div class="col-md-3 mb-3">
-            <label> Check In</label>
-            <%= form.text_field :start_date, readyonly: 'true', placeholder: "Start Date", class: 'form-control' %>
-        </div>
-         <div class="col-md-3">
-            <label> Check Out</label>
-            <%= form.text_field :end_date, readyonly: 'true', placeholder: "End Date", class: 'form-control', disabled: 'true' %>
-        </div>
-    </div>
+    <div class="card-body">
+        <%= form_with(model: [@room, @room.reservations.new], local: true) do |form| %>
+                <div class="row">
+                    <div class="col-md-3">
+                        <%= form.text_field :start_date, readyonly: 'true', placeholder: "Start Date", class: 'form-control' %>
+                    </div>
+                    <div class="col-md-3">
+                        <%= form.text_field :end_date, readyonly: 'true', placeholder: "End Date", class: 'form-control', disabled: 'true' %>
+                    </div>
 
-    <%= form.hidden_field :room_id, value: @room.id %>
-    <%= form.hidden_field :price, value: @room.price %>
-    <%= form.hidden_field :total, id: 'reservation_total'%>
+                    <div class="actions">
+                        <%= form.submit "Book Now", id: "btn_book", class: "btn btn-primary", disabled: 'true'%>
+                    </div>
+                </div>
+                <div class="row">
+                    <%= form.hidden_field :room_id, value: @room.id %>
+                    <%= form.hidden_field :price, value: @room.price %>
+                    <%= form.hidden_field :total, id: 'reservation_total'%>
 
-    <h4><span id="message"></span></h4>
+                    <h4><span id="message"></span></h4>
 
-    <div id="preview" style="display: none">
-        <table class="reservation-table">
-            <tbody>
-                <tr>
-                    <td>Day(s)</td>
-                    <td><span id="reservation_days"></span></td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>$<span id="reservation_sum"></span></td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
+                    <div id="preview" style="display: none">
+                        <table class="reservation-table">
+                            <tbody>
+                                <tr>
+                                    <td>Day(s)</td>
+                                    <td><span id="reservation_days"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>$<span id="reservation_sum"></span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                    </div>
+                </div>
+        <% end %> 
     </div>
-    <div class="actions">
-        <%= form.submit "Book Now", id: "btn_book", class: "btn btn-primary mb-5", disabled: 'true'%>
-    </div>
-<% end %>
+</div>
+
+
 
 <script>
 function unavailable(date) {
