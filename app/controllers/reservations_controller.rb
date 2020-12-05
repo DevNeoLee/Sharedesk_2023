@@ -32,6 +32,15 @@ class ReservationsController < ApplicationController
 
     def yourlisting_reservations 
         @rooms = current_user.rooms
+        @reservation_count = 0
+        @total_earning = 0
+
+        @rooms.each do |room| 
+            @reservation_count += room.reservations.count 
+            if room.reservations.count > 0 && room.reservations && room.price != nil
+                @total_earning += ( room.reservations.length * room.price ) 
+            end
+        end
     end
 
     private 
