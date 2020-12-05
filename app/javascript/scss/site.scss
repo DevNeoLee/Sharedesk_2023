@@ -1,5 +1,8 @@
 
 @import "pages";
+$primary: #1100ff;
+$primary-border-color: #00ff55;
+// $danger: red;
 @import "~bootstrap/scss/bootstrap.scss";
 @import "toastr";
 
@@ -12,6 +15,8 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&display=swap');
+
+
 
 /* -------------------- Resets --------------------- */
 body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
@@ -51,7 +56,7 @@ a:hover {
 }
 
 .main {
-  min-height: 30rem;
+  min-height: 80rem;
   width: 100 vw;
   height: 100 vh;
 }
@@ -308,11 +313,6 @@ input[type="checkbox"]:checked:before {
   font-size: 1.2rem;
 }
 
-.card_body {
-  // background-color: rgba(114, 54, 1, 0.747);
-  color: darkblue;
-  font-size: 1.1rem;
-}
 .card-header.preview {
   padding: 0;
 }
@@ -386,7 +386,7 @@ input[type="checkbox"]:checked:before {
 }
 
 // edit room
-.fa-wifi, .fa-sink, .fa-headset, .fa-print, .fa-wine-glass-alt, .fa-fire, .fa-fan, .fa-parking {
+.fa-wifi, .fa-sink, .fa-print, .fa-wine-glass-alt, .fa-fire, .fa-fan, .fa-parking, .fa-phone-square-alt {
   position: relative;
   right: 5%;
   top: 5%;
@@ -396,4 +396,13 @@ a .card:hover {
   transform: scale(1.02);
   opacity: 0.9;
   text-decoration: none;
+}
+
+.border_1 {
+  border: 1px solid black;
+}
+
+#map_image {
+  width: 700px;
+  height: 400px;
 }

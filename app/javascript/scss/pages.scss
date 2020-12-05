@@ -84,3 +84,10 @@ th, td {
   padding: 10px;
   text-align: center;
 }
+
+.horizontal_align {
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  align-items: center;
+}
