@@ -25,16 +25,16 @@
 <%# one click search for three main cities ard the world %>
 <div class="jumbotron shadow">
     <div class="text-center">
-        <h2>Anywhere You Go</h2>
+        <h2>Any City You Go</h2>
         <p>Discover Amazing Work Space Around You</p>
     </div>
     <br>
     <div class="row">
         <div class="col-md-4 col-sm-12">        
-            <%= link_to search_path(q:{"address_or_summary_or_listing_name_cont": "nyc"} ) do %>
+            <%= link_to search_path(q:{"address_cont": "New York City"} ) do %>
                 <div class="card shadow">
-                    <div class="card-header">       
-                        <h2><string>NYC</string></h2>
+                    <div class="card-header text-center">       
+                        <h2><strong>NYC</strong></h2>
                     </div>
                     <%= image_tag "nyc_home_page_pexels-ono-kosuki.jpg", class: "img-fluid image-medium image_response" %>
                     <div class="card-body">
@@ -46,9 +46,9 @@
             <% end %>    
         </div>    
     <div class="col-md-4 col-sm-12">
-        <%= link_to search_path(q:{"address_or_summary_or_listing_name_cont": "kolkata"}) do %>
+        <%= link_to search_path(q:{"address_cont": "Kolkata"}) do %>
             <div class="card shadow">
-                <div class="card-header">                    
+                <div class="card-header text-center">                    
                     <h2><strong>Kolkata</strong></h2>                    
                 </div>
                 <%= image_tag "kolkata_home_page_pexels-neosiam-.jpg", class: "img-fluid image-medium image_response"%>
@@ -61,9 +61,9 @@
         <% end %>
         </div>
     <div class="col-md-4 col-sm-12">
-        <%= link_to search_path(q:{"address_or_summary_or_listing_name_cont": "bangkok"}) do %>
+        <%= link_to search_path(q:{"address_cont": "Bangkok"}) do %>
             <div class="card shadow">
-                <div class="card-header">                    
+                <div class="card-header text-center">                    
                     <h2><strong>Bangkok</strong></h2>                    
                 </div>
                     <%= image_tag "bangkok_home_page_pexels-nick-wehrli.jpg" , class: "img-fluid image-medium"%>                         
@@ -76,6 +76,13 @@
         <% end %>
         </div>
     </div>
+</div>
+
+<%# Ad for Hosting your Space %>
+<div class="jumbotron shadow">
+
+        <h2 class="text-center"> Host your space in your city for extra income</h2>
+        <h5 class="text-center pt-3">Join Desk<%= image_tag 'orangePolygonLarge.png', width: "50" %>Share for your local community</h5>
 </div>
 
 <%# mid-search form %>
@@ -98,40 +105,23 @@
     <% end %>
 </div>
 
+<%# Top Most Poplular Picks %>
 <div class="jumbotron shadow col-md-12">
     <div class="text-center mb-5 h3">
-        <h3>Top Space Pick by Reviews </h3>
+        <h3 class="">Highly Rated Locations by Reviewers </h3>
     </div>
     <div class="row">    
-        <% @rooms.each do |room|%>
-            <div class="col-md-4">
-                <%= link_to room_path(room.id) do %>
-                    <div class="card mb-2 shadow m-2">
-                        <div class="card-header card_header text-center">
-                            <%= room.listing_name %>
-                        </div>
-                        <% if room.images.attached? %>
-                            <%= image_tag room.medium_image(room.images[0]), class: "img-fluid"%>
-                        <% end %>
-                        <div class="card-body card_body">
-                            <div class="card-text">
-                                <%= room.address %>
-                            </div>                     
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-        <% end %> 
+        <%= render @best_rooms %>
     </div>
 </div>
 
 <%# customer reviews %>
 <div class="jumbotron shadow">
     <div class="text-center">
-        <h2>Customer Reviews</h2>
+        <h2 class="mb-4">Customer Reviews</h2>
     </div>
     <div class="col-md-12"> 
-        <%= render "reviews/list" %>
+        <%= render @best_reviews %>
     </div>
 </div>
 
@@ -155,5 +145,4 @@
                 $('#start_date').datepicker("option", "maxDate", select);
             }
         })
-    });
 </script>

@@ -3,6 +3,7 @@ class PagesController < ApplicationController
     @pagy, @rooms = pagy(Room.all, items: 6)
     @search = @rooms.ransack(params[:q])
     @reviews = Review.all
+    @best_reviews = @reviews[0..2]
     # @best_ranking = @rooms.sort_by{|k, v| v}
 
     respond_to do |format|
