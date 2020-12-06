@@ -121,7 +121,7 @@
         <h2 class="mb-4">Customer Reviews</h2>
     </div>
     <div class="col-md-12"> 
-        <%= render @best_reviews %>
+        <%= render partial: 'reviews/review', locals: {reviews: @best_reviews} %>
     </div>
 </div>
 
