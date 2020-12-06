@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
   
   def index
     @rooms = current_user.rooms
+        @pagy, @rooms_result = pagy(@rooms, items: 10)
   end
 
   def show
