@@ -82,7 +82,10 @@
 <div class="jumbotron shadow">
 
         <h2 class="text-center"> Host your space in your city for extra income</h2>
-        <h5 class="text-center pt-3">Join Desk<%= image_tag 'orangePolygonLarge.png', width: "50" %>Share for your local community</h5>
+        <%= link_to new_user_registration_path do %>
+            <h5 class="text-center pt-3">Join Desk<%= image_tag 'orangePolygonLarge.png', width: "50" %>Share your place for your local community</h5>
+        <% end %>
+       
 </div>
 
 <%# mid-search form %>
