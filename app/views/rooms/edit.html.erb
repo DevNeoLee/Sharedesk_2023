@@ -3,3 +3,14 @@
 </div>
 <%= @room.listing_name%>
 <%= render 'form'%>
+
+  <div data-controller="infinite-scroll" data-action="scroll@window->infinite-scroll#scroll">
+        <div data-target="infinite-scroll.entries">
+            <div class="row">
+                <%= render @browse_result %>            
+            </div>
+        </div>
+        <div data-target="infinite-scroll.pagination">
+            <%== pagy_bootstrap_nav(@pagy).html_safe %>
+        </div>
+    </div>
