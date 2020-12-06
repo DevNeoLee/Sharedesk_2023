@@ -20,16 +20,13 @@ export default class extends Controller {
     }
 
     loadMore(url) {
-        console.log('one time')
         $.ajax({
             method: 'GET',
             url: url, 
             dataType: 'json',
             success: (data) => {
-                console.log('yes')
                 this.entriesTarget.insertAdjacentHTML('beforeend', data.entries)
                 this.paginationTarget.innerHTML = data.pagination
-                console.log(data)
             },
             error: (message) => {
                 console.log('error')
