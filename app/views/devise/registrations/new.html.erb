@@ -54,7 +54,11 @@
         <div class="m-2">
         <hr>
       
-          <%= link_to do %><button type="button" class="btn btn-lg btn-primary btn-block">Demo</button><% end %><br>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-signin2") do |f| %>
+          <%= f.hidden_field :email, value: 'peter@email.com' %>
+          <%= f.hidden_field :password, value: '111111' %>
+          <%= f.submit "DEMO", class: "btn btn-lg btn-primary btn-block p-2"  %>    
+        <% end %>
         </div>
 
         <hr>
