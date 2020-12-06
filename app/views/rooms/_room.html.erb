@@ -20,9 +20,10 @@
 $(function(){
     $('#average_rate_<%= room.id %>').raty({
         readOnly: true,
-        number: 5,
         score: <%= room.average_rating %>,
-        path: '/assets/',
+        starOff: '<%= image_path('star-off.png') %>',
+        starOn : '<%= image_path('star-on.png') %>',
+        starHalf: '<%= image_path 'star-half.png' %>',
     })
 
 });

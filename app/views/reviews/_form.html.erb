@@ -13,6 +13,9 @@
     $('#stars').raty({
         scoreName: 'review[star]',
         score: 1,
-        path: '/assets/',
+        starOff: '<%= image_path('star-off.png') %>',
+        starOn : '<%= image_path('star-on.png') %>',
+        starHalf: '<%= image_path 'star-half.png' %>',
+
     });
 </script>
