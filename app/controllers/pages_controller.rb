@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @pagy, @rooms = pagy(Room.all, items: 6)
+    @pagy, @rooms = pagy(Room.all, items: 10)
     @search = @rooms.ransack(params[:q])
     @reviews = Review.all
     @best_reviews = @reviews[0..2]
@@ -31,9 +31,6 @@ class PagesController < ApplicationController
     # else
     #   @rooms_address = Room.where(active: true).all
     # end
-
-    @search = Room.all.ransack(params[:q])
-    @search_result = @search.result
 
     @room_result_arr = @room_result.to_a
 

@@ -6,12 +6,11 @@ class ApplicationController < ActionController::Base
 
     def set_global_search_variable
         @browse = Room.all.ransack(params[:q])
-        @pagy, @browse_result = pagy(@browse.result(distinct: true), items: 3)
+        @pagy_search, @browse_result = pagy(@browse.result(distinct: true), items: 10)
         request.location.city == nil ?  @location_received = "NYC" : @location_received = request.location.city
         @best_rooms = Room.all[0..2]
     end
 
-    
     protected 
         def configure_permitted_parameters 
             devise_parameter_sanitizer.permit :sign_up, keys: [:name, :avatar] 

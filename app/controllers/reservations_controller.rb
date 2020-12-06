@@ -28,6 +28,8 @@ class ReservationsController < ApplicationController
 
     def your_trips 
         @trips = current_user.reservations
+
+        @pagy, @trips_result = pagy(@trips, items: 10)
     end
 
     def yourlisting_reservations 
@@ -41,6 +43,9 @@ class ReservationsController < ApplicationController
                 @total_earning += ( room.reservations.length * room.price ) 
             end
         end
+
+
+        @pagy, @rooms_result = pagy(@rooms, items: 10)
     end
 
     private 
