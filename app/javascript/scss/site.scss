@@ -1,8 +1,6 @@
 
 @import "pages";
-$primary: #1100ff;
-$primary-border-color: #00ff55;
-// $danger: red;
+$primary: #1100ff; // resetting primary color of bootstrap
 @import "~bootstrap/scss/bootstrap.scss";
 @import "toastr";
 
@@ -15,8 +13,6 @@ $fa-font-path: '~@fortawesome/fontawesome-free/webfonts';
 
 /* google font */
 @import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300&display=swap');
-
-
 
 /* -------------------- Resets --------------------- */
 body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
@@ -59,7 +55,6 @@ a:hover {
   min-height: 80rem;
   width: 100 vw;
   height: 100 vh;
-  background-color: seagreen;
 }
 .image-small {
   width: 250px;
