@@ -1,19 +1,9 @@
 class PagesController < ApplicationController
   def home
-    @pagy, @rooms = pagy(Room.all, items: 10)
+    @pagy, @rooms = pagy(Room.all, items: 3)
     @search = @rooms.ransack(params[:q])
     @reviews = Review.all
     @best_reviews = @reviews[0..2]
-    # @best_ranking = @rooms.sort_by{|k, v| v}
-
-    respond_to do |format|
-      format.html
-      format.json {
-        render json: {
-          entries: render_to_string(partial: @rooms, formats: [:html]), pagination: view_context.pagy_nav(@pagy)
-        }
-      }
-    end
   end
 
   def attribution
@@ -32,7 +22,7 @@ class PagesController < ApplicationController
     #   @rooms_address = Room.where(active: true).all
     # end
 
-    @room_result_arr = @room_result.to_a
+    # @room_result_arr = @room_result.to_a
 
     # if (params[:start_date] && params[:end_date] && !params[:start_date].empty? && !params[:end_date].empty? )
   

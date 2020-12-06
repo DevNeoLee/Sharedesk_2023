@@ -4,39 +4,36 @@ export default class extends Controller {
     static targets =[ "entries", "pagination"]
 
     scroll() {
+        let next_page = this.paginationTarget.querySelector("a[rel='next']")
+        if (next_page == null) { return }
+
+        let url = next_page.href 
+  
         var body = document.body,
             html = document.documentElement
-            
+
         var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
 
-        if (window.pageYOffset >= height - window.innerHeight ) {
-            console.log('bottom')
-        }
-        // let next_page = this.paginationTarget.querySelector("a[rel='next']")
-        // if (next_page == null) { return }
-
-        // let url = next_page.href 
-
-        // var body = document.body,
-        //     html = document.documentElement
-
-        // var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight)
-
-        //     if (window.pageYOffset >= height - window.innerHeight ) {
-        //         this.loadMore(url)
-        //     }
+            if (window.pageYOffset >= height - window.innerHeight - 300 ) {
+                this.loadMore(url)
+            }
     }
 
     loadMore(url) {
+        console.log('one time')
         $.ajax({
-            type: 'GET',
+            method: 'GET',
             url: url, 
             dataType: 'json',
             success: (data) => {
-         
+                console.log('yes')
                 this.entriesTarget.insertAdjacentHTML('beforeend', data.entries)
-                this.paginationTarget.innerHTML = "<%== pagy_bootstrap_nav(@pagy).html_safe %>"
-               
+                this.paginationTarget.innerHTML = data.pagination
+                console.log(data)
+            },
+            error: (message) => {
+                console.log('error')
+                console.log(message)
             }
         })
     }

@@ -10,7 +10,7 @@
                     <h5><%=Time.now.strftime("%B")%> <%= Time.now.year %></h5>
                 </div>
                 <div class="card-text">
-                    You have total <strong class="h4 m-1"><%= @reservation_count %></strong> reservations.
+                    You have total <strong class="h4 m-1"><%= @total_reservation %></strong> reservations.
                 </div>
                 <div class="card-text">
                     Total Sales: $ <strong class="h4 m-1"><%= @total_earning %></strong>
@@ -26,7 +26,7 @@
                     <h5> Year: <%= Time.now.year %></h5>
                 </div>
                 <div class="card-text">
-                    You have total <strong class="h4 m-1"><%= @reservation_count %></strong> reservations
+                    You have total <strong class="h4 m-1"><%= @total_reservation %></strong> reservations
                 </div>
                 <div class="card-text">
                     Total Sales: $ <strong class="h4 m-1"><%= @total_earning %></strong>

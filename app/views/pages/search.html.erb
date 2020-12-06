@@ -164,18 +164,18 @@
 </div>
 
 <div data-controller="infinite-scroll" data-action="scroll@window->infinite-scroll#scroll">
-    <div data-target="infinite-scroll.entries">
-        <div class="row">
-            <%= render @browse_result %>            
-        </div>
+    <div class="row" data-target="infinite-scroll.entries">
+    <%# <div class="row"> %>
+     
+            <%= render 'rooms/rooms'%> 
+     
+    <%# </div>            %>
     </div>
-    <div data-target="infinite-scroll.pagination" id="pagination">
+    <div data-target="infinite-scroll.pagination", id="pagination">
         <%== pagy_bootstrap_nav(@pagy_search).html_safe %>
     </div>
 </div>
-
-
-    
+  
 <script>
     $(function() {
         $('#complex_search_button').on('click', function() {
@@ -191,7 +191,6 @@
                 $('#price_min').val('');
                 $('#price_max').val('');
             }
-
         });
 
         $('#start_date').datepicker({
