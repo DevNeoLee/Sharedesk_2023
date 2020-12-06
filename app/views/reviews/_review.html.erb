@@ -1,7 +1,8 @@
-<% if @reviews.count == 0 %>
+<% if reviews.count == 0 %>
     <div class="text-center"><h4>There is no Review yet.</h4></div>
 <% else %>
-
+    <% reviews.each do |review|%>
+    <% if review.user %>
     <div class="card shadow p-3 mb-2">
         <div class="row">
             <div class="col-md-2 text-center">
@@ -11,7 +12,7 @@
                 <div>
                     <strong><%= review.user.name %><div id="stars_<%= review.id %>"></div></strong>
                     <span class="pull-right">
-                        <%= link_to "Remove My Review", [review.room, review], method: "delete", data: {confirm: "Are you sure?"} if current_user && current_user == review.user %>
+                        <%= link_to "Remove My Review", room_review_path(review.user.id, review) , method: "delete", data: {confirm: "Are you sure?"} if current_user && current_user == review.user %>
                     </span>
                 </div>
 
@@ -25,11 +26,11 @@
         $('#stars_<%= review.id %>').raty({
             readOnly: true,
             score: <%= review.star %>,
-            starOff:  '<%= image_path('star-off.png') %>',
-            starOn : '<%= image_path('star-on.png') %>',
+            path: '/assets/',
         })
     });
     </script>
-
+    <% end %>
+    <% end %>
 <% end %>
 
