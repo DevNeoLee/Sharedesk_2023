@@ -101,11 +101,11 @@
                         </div>
                     <% end %>
                 <% end %>
-            <div data-target="infinite-scroll.pagination" id="pagination">
-                <%== pagy_bootstrap_nav(@pagy).html_safe %>
-            </div>
             <%# </div>
         </div> %>
+    </div>
+    <div data-target="infinite-scroll.pagination" class="pagination_type">
+        <%== pagy_bootstrap_nav(@pagy).html_safe %>
     </div>
 </div>
 
