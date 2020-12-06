@@ -1,9 +1,9 @@
 class Room < ApplicationRecord
   belongs_to :user
-  has_many_attached :images 
-  has_many :reservations
+  has_many_attached :images,  dependent: :destroy 
+  has_many :reservations,  dependent: :destroy 
   geocoded_by :address
-  has_many :reviews
+  has_many :reviews,  dependent: :destroy 
 
   validates :images, presence: true
 
@@ -15,7 +15,7 @@ class Room < ApplicationRecord
     end
   end
 
-  # validates_associated :images, presence: true
+  validates_associated :images, presence: true
 
   def average_rating 
     reviews.count == 0 ? 0 : reviews.average(:star).round(2)
