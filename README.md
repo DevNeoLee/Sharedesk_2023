@@ -78,6 +78,7 @@ User can sign up their homes space for rental business. User can search their lo
 - Emailing notification
 - API location using Jbuilder for React/Redux
 - Hourly reservation
+- Conversation(chatting) between customers and hosts
 - Payment system 
 ---
 ## License ##
