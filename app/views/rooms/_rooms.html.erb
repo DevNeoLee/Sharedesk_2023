@@ -2,9 +2,9 @@
     <% @browse_result.each do |room| %>  
         <div class="col-md-4">
             <%=link_to room_path(room.id) do %>
-                <div class="card mb-2 shadow d-flex text-center">
-                    <div class="card-header d-flex text-center">
-                        <div class="h4"><%= room.listing_name %></div> <div class="ml-5 m-0 p-0" id="average_rate_<%= room.id %>"></div>
+                <div class="card mb-2 shadow text-center">
+                    <div class="card-header text-center">
+                        <div class="h4"><%= room.listing_name %></div> 
                     </div>
                     <% if room.images.attached? %>
                         <%= image_tag room.medium_image(room.images[0]), class: "img-fluid"%>
@@ -15,19 +15,6 @@
                         </div>
                     </div>
                 </div>
-
-                <script>
-                    $(function(){
-                        $('#average_rate_<%= room.id %>').raty({
-                            readOnly: true,
-                            score: <%= room.average_rating %>,
-                            starOff: '<%= image_path('star-off.png') %>',
-                            starOn : '<%= image_path('star-on.png') %>',
-                            starHalf: '<%= image_path 'star-half.png' %>',
-                        })
-                    });
-                </script>
-
             <% end %>
         </div>    
     <% end %>

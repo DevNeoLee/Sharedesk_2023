@@ -29,7 +29,7 @@ class ReservationsController < ApplicationController
     def your_trips 
         @trips = current_user.reservations
 
-        @pagy, @trips_result = pagy(@trips, items: 10)
+        @pagy, @trips_result = pagy(@trips, items: 8)
     end
 
     def yourlisting_reservations 
@@ -45,7 +45,7 @@ class ReservationsController < ApplicationController
         end
 
 
-        @pagy, @rooms_result = pagy(@rooms, items: 10)
+        @pagy, @rooms_result = pagy(@rooms, items: 8)
     end
 
     private 

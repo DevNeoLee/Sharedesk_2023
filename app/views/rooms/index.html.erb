@@ -12,19 +12,19 @@
         </div>
     </div>
     <div class="col-md-9">
-        <div data-controller="infinite-scroll" data-action="scroll@window->infinite-scroll#scroll">
-            <div data-target="infinite-scroll.entries">
+        <%# <div data-controller="infinite-scroll" data-action="scroll@window->infinite-scroll#scroll">
+            <div data-target="infinite-scroll.entries"> %>
                 <div class="row">
                     <% @rooms_result.each do |room| %>
                         <%= render 'room_result', room: room %>   
                     <% end %>
                 </div> 
             </div>
-        </div>
-        <div data-target="infinite-scroll.pagination" id="pagination">
-            <%== pagy_bootstrap_nav(@pagy).html_safe %>
-        </div>
-    </div>
+            <div data-target="infinite-scroll.pagination" id="pagination">
+                <%== pagy_bootstrap_nav(@pagy).html_safe %>
+            </div>
+        <%# </div>
+    </div> %>
 </div>
          
                  
