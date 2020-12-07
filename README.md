@@ -2,7 +2,7 @@
 
 # Share Desk App
 
-### live site: https://fathomless-sands-44020.herokuapp.com/
+### live site: https://deskshare-app.herokuapp.com/
 
 <img src="app/assets/images/share_desk.gif" alt="application_screenshot" width="500" />
 
@@ -68,12 +68,17 @@ User can sign up their homes space for rental business. User can search their lo
 
 ### Notification with Toastr
 
+### Infinite Scrolling for Search Result using Ajax javascript call
+
+### Pagination for each page with pagy gem
+
 ---
 ## Future Features to Come
 
 - Emailing notification
 - API location using Jbuilder for React/Redux
 - Hourly reservation
+- Conversation(chatting) between customers and hosts
 - Payment system 
 ---
 ## License ##
