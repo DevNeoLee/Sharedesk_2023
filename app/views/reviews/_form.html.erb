@@ -2,7 +2,7 @@
 <div class="card p-3 shadow">
     <div class="form-group d-flex">
         <div class="p-2 col-md-6"><%= f.text_field :comment, placeholder: "Write review..", class: "form-control" %></div>
-        <span class="p-2 mt-1">Rate: </span><div id="stars" class="mt-2 pr-2 pl-2" style="min-width: 120px"></div>
+        <span class="p-2 mt-1">Rate: </span><div id="stars" class="mt-2 pr-2 pl-2 star_min_width"></div>
         <div class="p-2"><%= f.hidden_field :room_id, value: @room.id %></div>
 
         <div class="actions">

@@ -95,7 +95,7 @@ th, td {
 .pagination_type {
   position: absolute;
   bottom: 0%;
-  right: 50%;
+  right: 25%;
 }
 
 #main {
@@ -105,4 +105,18 @@ th, td {
 .info_text {
   font-size: 1.1rem;
   color: rgb(59, 59, 59);
+}
+
+.star_min_width {
+  min-width: 130px;
+}
+
+.your_cart_grid {
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.your_cart_card {
+  min-width: 240px; 
+  max-width: 250px;
 }

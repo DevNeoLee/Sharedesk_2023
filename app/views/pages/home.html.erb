@@ -32,7 +32,7 @@
     <div class="row">
         <div class="col-md-4 col-sm-12">        
             <%= link_to search_path(q:{"address_cont": "NYC"} ) do %>
-                <div class="card shadow">
+                <div class="card shadow mb-2">
                     <div class="card-header text-center">       
                         <h2><strong>NYC</strong></h2>
                     </div>
@@ -47,7 +47,7 @@
         </div>    
     <div class="col-md-4 col-sm-12">
         <%= link_to search_path(q:{"address_cont": "Kolkata"}) do %>
-            <div class="card shadow">
+            <div class="card shadow mb-2">
                 <div class="card-header text-center">                    
                     <h2><strong>Kolkata</strong></h2>                    
                 </div>
@@ -62,7 +62,7 @@
         </div>
     <div class="col-md-4 col-sm-12">
         <%= link_to search_path(q:{"address_cont": "Bangkok"}) do %>
-            <div class="card shadow">
+            <div class="card shadow mb-2">
                 <div class="card-header text-center">                    
                     <h2><strong>Bangkok</strong></h2>                    
                 </div>
@@ -92,16 +92,16 @@
 <div class="container-fluid mb-4 border p-4 shadow sticky-top bg-light">
     <%= search_form_for @search, url: search_path, method: :get do |f| %>
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6 mb-2">
                 <%= f.search_field :address_cont, placeholder: "where are you going?", class: "form-control input-lg"%>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mb-2">
                 <%= f.submit "Check Availability", class: "btn btn-primary"%>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mb-2">
                 <%= text_field_tag :start_date, "start date", class:"form-control", id: "start_date"%>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 mb-2">
                 <%= text_field_tag :end_date, "end date", class:"form-control", id: "end_date"%>
             </div>
         </div>

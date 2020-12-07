@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     @pagy, @rooms = pagy(Room.all, items: 3)
     @search = @rooms.ransack(params[:q])
     @reviews = Review.all
-    @best_reviews = @reviews[43..46]
+    @best_reviews = @reviews[4..6]
     @best_rooms = User.find(2).rooms[0...3]
   end
 

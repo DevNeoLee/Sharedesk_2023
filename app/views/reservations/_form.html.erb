@@ -5,14 +5,14 @@
     <div class="card-body">
         <%= form_with(model: [@room, @room.reservations.new], local: true) do |form| %>
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-2">
                         <%= form.text_field :start_date, readyonly: 'true', placeholder: "Start Date", class: 'form-control' %>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 mb-2">
                         <%= form.text_field :end_date, readyonly: 'true', placeholder: "End Date", class: 'form-control', disabled: 'true' %>
                     </div>
 
-                    <div class="actions">
+                    <div class="actions mb-2 ml-3">
                         <%= form.submit "Book Now", id: "btn_book", class: "btn btn-primary", disabled: 'true'%>
                     </div>
                 </div>

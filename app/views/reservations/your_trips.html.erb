@@ -1,11 +1,11 @@
 <div class="col-md-12" >
         <div class="h1 m-4 pt-5 pb-3"> Your Cart</div>
         <hr>
-    <div class="row mt-5">
+    <div class="your_cart_grid">
             <% @trips_result.each do |trip| %>
                 <div class="col-md-3 mb-2">
                     <%= link_to room_path(trip.room) do %>
-                    <div class="card mb-2">
+                    <div class="card mb-2 ml-2 mr-2" style="min-width: 240px; max-width: 250px;">
                         <div class="card-header h4">
                                 <%= trip.start_date.strftime('%v')%>                
                         </div>
