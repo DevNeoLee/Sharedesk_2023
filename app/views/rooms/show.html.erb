@@ -38,20 +38,47 @@
     </div>
 </div>
 
+<%# Room summanry%>
+<div class="card mb-3 shadow info_text">
+    <div class="card-header">
+        <h4>About</h4>
+    </div>
+    <div class="col-md-12">
+        <div class="row p-3">
+            <div class="col-md-5 pt-5 text-center">
+                <p class="pl-3 pr-3 h5"><%= @room.summary %></p>                   
+            </div>
+            <div class=" h5 col-md-1.5 pt-5 text-center">
+                Managed by:
+            </div>        
+            <div class="col-md-4 text-center">
+                <%= link_to user_path(@room.user.id) do%>
+                    <%= image_tag (@room.user.default_avatar), class: "img-circle avatar-medium"%>                      
+                <% end %>
+                <div class=" pt-2 ml-2">
+                    <%= @room.user.name %>                                          
+                </div>  
+                            
+            </div>    
+            <p class="col-md-1.5 mt-5 text-center"><%= @room.user.email %></p>                 
+        </div>
+    </div>
+</div>
+
 <%# Room Essential Info %>
 <div class="card shadow mb-3">
     <div class="card-header">
-        <p>About</p>
+       <h4>Info</h4>
     </div>
-    <div class="row text-center">
-        <div class="col-md-3 mb-5 p-3">
+    <div class="row text-center info_text">
+        <div class="col-md-3 mb-5 p-3 ">
             Operating in <br>
             <%= "#{@room.space_type }" == 'House' ? 'a ': 'an '%><%= @room.space_type%>
         </div>
-        <div class="col-md-3 mb-5 p-3">
+        <div class="col-md-3 mb-5 p-3 ">
             <%= @room.desk_type %> <br> Type
         </div>
-        <div class="col-md-3 mb-5 p-3">
+        <div class="col-md-3 mb-5 p-3 ">
             Capacity:<br>
             <% if @room.capacity %>
                 <%= @room.capacity %> <%= @room.capacity > 1 ? "Seats" : "Seat" %>
@@ -61,8 +88,8 @@
             Noise Level:<br> <%= @room.noise_level %>
         </div>
     </div>
-    <div class="row text-center">
-            <div class="col-md-3 mb-1 p-3 pb-1">
+    <div class="row text-center info_text">
+        <div class="col-md-3 mb-1 p-3 pb-1">
             Manager on Premise:<br> <%= @room.manager_on %> 
         </div>         
         <div class="col-md-3 mb-1 p-3 pb-1">
@@ -74,33 +101,13 @@
                 <%= @room.bath_room > 1 ? "Bathrooms" : "Bathroom" %>
             <% end %>
         </div>
+         <div class="col-md-3 mb-1 p-3 pb-1">
+            $ <%= @room.price %> per day<br>
+        </div>
     </div>         
 </div>
 
-<%# Room summanry%>
-<div class="card mb-3 shadow">
-    <div class="card-header">
-        <p>Host</p>
-    </div>
-    <div class="col-md-12">
-        <div class="row">
-            <div class="col-md-3 pt-5 text-center">
-                <p class="pl-3 pr-3"><%= @room.summary %></p>                   
-            </div>
-            <div class="col-md-3 pt-5 text-center">
-                <p class="pl-3 pr-3"><%= @room.user.email %></p>                   
-            </div>
-            <div class="col-md-3 pt-5 text-center">
-                <p class="pl-3 pr-3"><%= @room.user.phone_number %></p>                   
-            </div>
-            <div class="col-md-3 text-center">
-                <%= link_to user_path(@room.user.id) do%>
-                    <%= image_tag (@room.user.default_avatar), class: "img-circle avatar-medium"%> <strong><%= @room.user.name %></strong>                     
-                <% end %>                    
-            </div>        
-        </div>
-    </div>
-</div>
+
 
 <%# google map %>
 <div class="card  shadow mb-3" id="map_image">
@@ -109,10 +116,10 @@
 <%# Amenities %>
 <div class="card shadow mb-3">
     <div class="card-header">
-        <p>Amenity</p>
+        <h4>Amenity</h4>
     </div>
     <div class="col-md-12">
-        <div class="row">
+        <div class="row info_text">
             <div class="col-md-4 text-center">
                 <ul class="amenities">                            
                     <li class="<%= 'text-line-through' if !@room.is_wifi %> p-4"><i class="fas fa-wifi fa-lg"></i>Wifi/Internet</li>
@@ -143,12 +150,11 @@
 <%# Reviews %>
 <div class="card shadow">
     <div class="card-header">
-        <h3>Reviews <span id="average_rating"></span> (<%= @reviews.count %>)</h3>        
+        <h4>Review <span id="average_rating"></span> (<%= @reviews.count %>)</h4>        
     </div>
 </div>
 
-
-    <%= render 'reviews/form' if @booked && !@hasReview %>
+    <div class="p-0"><%= render 'reviews/form' if @booked && !@hasReview %></div>
     <%= render partial: 'reviews/review', locals: {reviews: @reviews} %>
 
 <div class="jumbotron mt-5">
