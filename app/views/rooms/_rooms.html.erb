@@ -2,7 +2,7 @@
     <% @browse_result.each do |room| %>  
         <div class="col-md-4">
             <%=link_to room_path(room.id) do %>
-                <div class="card mb-2 shadow text-center">
+                <div class="card mb-2 shadow text-center mb-3">
                     <div class="card-header text-center">
                         <div class="h4"><%= room.listing_name %></div> 
                     </div>

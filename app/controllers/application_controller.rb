@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
         @browse = Room.all.ransack(params[:q])
         @pagy_search, @browse_result = pagy(@browse.result(distinct: true), items: 9)
         request.location.city == nil ?  @location_received = "NYC" : @location_received = request.location.city
-        @best_rooms = Room.all[0..2]
 
         respond_to do |format|
             format.html
