@@ -44,7 +44,6 @@ class ReservationsController < ApplicationController
             @total_reservation += room.reservations.count
         end
 
-
         @pagy, @rooms_result = pagy(@rooms, items: 8)
     end
 
