@@ -85,7 +85,7 @@ Geocode gem was used to detect the local location of the user browser so the loc
 
 ### Convinient Login using Omniauth(Google/Facebook)
 
-Devise gem was used together with omniauth authentification with preset Google/Facebook.
+Devise gem was used together with omniauth authentification from preset Google/Facebook services when authentification call was reached from Sharedesk url address.
 
 ### Notification with Toastr
 
