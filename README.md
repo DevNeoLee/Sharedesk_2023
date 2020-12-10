@@ -93,7 +93,7 @@ Toastre gem was used for more informative notification services including differ
 
 ### Infinite Scrolling for Search Result using Ajax javascript call
 
-Stimulus.js was used to listen html events on the web service. Particularly it was used for infinite scrolling when the serched results need to be loaded easily as soon as the scrolling down event was reached at certail point on the bottom. Stimulus also listen to the event for finishing up the infinite scrolling when it reached the last item on the result.
+Stimulus.js was used to listen html events on the web service. Particularly it was used for infinite scrolling when next page of search results need to be Ajax called and the data needed to be loaded easily as soon as the scrolling down event was reached at certail point on the bottom. Stimulus also listen to the event for finishing up the infinite scrolling when it reached the last item on the result.
 
 ### Pagination for each page with pagy gem
 
