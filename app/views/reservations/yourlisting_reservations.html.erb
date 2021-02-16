@@ -3,7 +3,7 @@
     <div class="col-md-3" style="min-width: 250px; max-width: 300px;">
         <div class="card mb-3">
             <div class="card-header">
-                Reservation Monthly Summary
+                Reservation Summary
             </div>
             <div class="card-body">
                 <div class="card-title">
@@ -17,22 +17,7 @@
                 </div>
             </div>
         </div>
-        <div class="card mb-3">
-            <div class="card-header">
-                Reservation Yearly Summary
-            </div>
-            <div class="card-body">
-                <div class="card-title">
-                    <h5> Year: <%= Time.now.year %></h5>
-                </div>
-                <div class="card-text">
-                    You have total <strong class="h4 m-1"><%= @total_reservation %></strong> reservations
-                </div>
-                <div class="card-text">
-                    Total Sales: $ <strong class="h4 m-1"><%= @total_earning %></strong>
-                </div>
-            </div>
-        </div>
+       
     </div>
     <div class="col-md-9">
         <%# <div data-controller="infinite-scroll" data-action="scroll@window->infinite-scroll#scroll">
