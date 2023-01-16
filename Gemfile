@@ -24,7 +24,7 @@ gem 'geocoder'
 
 gem 'devise'
 
-gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'ransack'
 
 gem 'pagy', '~> 3.5' 
 # Use Redis adapter to run Action Cable in production
