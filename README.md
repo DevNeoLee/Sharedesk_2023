@@ -2,7 +2,7 @@
 
 # Share Desk App
 
-### live site: https://deskshare-app.herokuapp.com/
+### live site: https://sharedesk1.onrender.com/
 
 <img src="app/assets/images/share_desk.gif" alt="application_screenshot" width="500" />
 
