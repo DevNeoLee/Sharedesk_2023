@@ -10,3 +10,5 @@
 #     Room.create(listing_name: 'Good morning room #{i}', user_id: 2)
 # end
 
+User.create(email: "justin@email.com", name: "justin", password: "111111")
+User.create(email: "peter@email.com", name: "peter", password: "111111")
